@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,6 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-rh&7^)((6j*53p(wf5jw4psukfzs@_m4^)6h322r7=i#^t=31r'
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -32,6 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'portfolio_website.apps.PortfolioWebsiteConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -77,13 +80,14 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django_test_2',
+        'NAME':'django_test_2' ,
         'USER': 'mac',
-        'PASSWORD': None,
-        'HOST': '127.0.0.1',
+        'PASSWORD':None,
+        'HOST':'127.0.0.1' ,
         'PORT': '5432',
     }
 }
+
 
 if os.environ.get('GITHUB_WORKFLOW'):
     DATABASES = {
